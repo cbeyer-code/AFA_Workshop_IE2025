@@ -1,6 +1,7 @@
 Active Feature Acquisition (AFA) on Data Streams Workshop @ IE 2025
 
 In this workshop you will learn how to run AFA experiments on data streams using the riverml library.
+
 🗂️ Workshop Overview
 
     1) Background on Active Feature Acquisition (30min)
