@@ -22,6 +22,7 @@ Pycharm IDE: [Download here](https://www.jetbrains.com/pycharm/download/?section
 Python 3.13: [Download here](https://www.python.org/downloads/release/python-3135/)
 
 (Code of Framework is maintained [here](https://github.com/cbeyer-code/AFA_Stream_Framework))
+(For the workshop the code is also available [here](https://cloud.ovgu.de/s/gbfnZgbqYYXR9fZ))
     
 
 ### 2. Installation Instructions
