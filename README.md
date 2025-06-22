@@ -64,4 +64,7 @@ feature scoring methods (random and Average Euclidean Distance).
 Furthermore, you will know where to change the provided framework to implement custom scoring -, as
 well as evaluation metrics, and new feature set selection strategies.
 
-
+## Papers
+- Beyer et al. [Active feature acquisition on data streams under feature drift](https://link.springer.com/content/pdf/10.1007/s12243-020-00775-2.pdf)
+- Büttner et al. [Reducing Missingness in a Stream through Cost-Aware Active Feature Acquisition](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10032414&casa_token=qKuCvUooETQAAAAA:V1ojaQ93TCN54hb9R2LJU2MEIpR0aOPOWj4FyfYFV0PtIApK2zpMHabw1f1FxNnpNHda4XD_Vw&tag=1)
+- Büttner et al. [Joining Imputation and Active Feature Acquisition for Cost Saving on Data Streams with Missing Features](https://link.springer.com/chapter/10.1007/978-3-031-45275-8_21)
