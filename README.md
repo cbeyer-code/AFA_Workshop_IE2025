@@ -51,7 +51,7 @@ For example:
 - Analysis which features where acquired the most
 - Storing history data to compare different scoring mechanisms visually
 - Add window-based evaluation
-- Add new feature scoring functions e.g. entropy-based from [Yuan et al., 2018,  “Iterative subset selection for feature drifting data streams”.]
+- Add new feature scoring functions e.g. entropy-based from [Yuan et al., 2018](https://dl.acm.org/doi/pdf/10.1145/3167132.3167188?casa_token=VWC1t85My58AAAAA:IUBfQ0nM7QkhKK-out5o1hJx32b4pf7t1v05FdhmXlvO9SuyE8q8qI9DPs28H3ZYoSCpRfKAw3Jl)
 
 
 
