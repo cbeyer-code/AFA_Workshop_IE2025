@@ -4,12 +4,12 @@ In this workshop you will learn how to run AFA experiments on data streams using
 
 🗂️ Workshop Overview
 
-    1) Background on Active Feature Acquisition (30min)
-    2) Introduction to the Framework (10min)
-    3) Coding Exercises 1 (20min)
-    4) Coffee Break (30min)
-    5) Coding Exercises 2 (20-30min)
-    6) Presentation of Solutions and Discussion (20min)
+    1. Background on Active Feature Acquisition (30min)
+    2. Introduction to the Framework (10min)
+    3. Coding Exercises 1 (20min)
+    4. Coffee Break (30min)
+    5. Coding Exercises 2 (20-30min)
+    6. Presentation of Solutions and Discussion (20min)
 
 
 
