@@ -17,9 +17,9 @@ In this workshop you will learn how to run AFA experiments on data streams using
 
 Before you begin, ensure you have the following installed:
 
-[Pycharm] (https://www.jetbrains.com/pycharm/download/?section=windows)
+Pycharm IDE: [Download here](https://www.jetbrains.com/pycharm/download/?section=windows)
 
-Python 3.13: Download here
+Python 3.13: [Download here](https://www.python.org/downloads/release/python-3135/)
     
 
 ### 2. Installation Instructions
