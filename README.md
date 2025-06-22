@@ -20,6 +20,8 @@ Before you begin, ensure you have the following installed:
 Pycharm IDE: [Download here](https://www.jetbrains.com/pycharm/download/?section=windows)
 
 Python 3.13: [Download here](https://www.python.org/downloads/release/python-3135/)
+
+(Code of Framework is maintained [here](https://github.com/cbeyer-code/AFA_Stream_Framework))
     
 
 ### 2. Installation Instructions
