@@ -47,7 +47,7 @@ Before you begin, ensure you have the following installed:
     - Analysis which features where acquired the most
     - Storing history data to compare different scoring mechanisms visually
     - Add window-based evaluation
-    - Add new feature scoring functions e.g. entropy-based from [Yuan, Lanqin, Pfahringer, Bernhard, and Barddal, Jean Paul. “Iterative subset
+    - Add new feature scoring functions e.g. entropy-based from [Yuan et al., 2018,  “Iterative subset
       selection for feature drifting data streams”.]
 
 
