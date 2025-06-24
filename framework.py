@@ -259,7 +259,7 @@ def plot_results(history: dict, title: str):
     # Plot 1: Performance (Kappa)
     ax1.plot(history['step'], history['kappa'], label='Kappa Score', color='blue')
     ax1.set_ylabel('Kappa Score')
-    ax1.set_title(f'Model Performance - Running Cohen Kappa')
+    ax1.set_title(f'Model Performance - Running Cohen Kappa (final score: '+str(round(history['kappa'][-1],3))+')')
     ax1.grid(True)
     ax1.legend()
     ax1.set_ylim(-1, 1)
@@ -327,7 +327,7 @@ if __name__ == '__main__':
     N_SAMPLES = 20000
     BUDGET_PER_INSTANCE = 1.0
     MISSINGNESS = 0.5
-    K_PARAM = 4  # For k-best, etc.
+    K_PARAM = 2  # For k-best, etc.
 
     USE_PANDAS_DF = True  # Set to True to use a local pandas DataFrame
 
@@ -376,7 +376,7 @@ if __name__ == '__main__':
     cost_strat = 'equal'  # 'equal', 'increasing', 'decreasing'
 
     # 5. Acquisition Strategy
-    acq_strat = 'k-global-best'  # 'k-best', 'k-global-best', 'k-max-mean'
+    acq_strat = 'k-max-mean'  # 'k-best', 'k-global-best', 'k-max-mean'
 
     # --- RUN ---
 
