@@ -36,7 +36,7 @@ for i in range(n_instances):
 
 # Convert to DataFrame
 df = pd.DataFrame(data)
-df.to_csv('mixed_5k_shift')
+df.to_csv('mixed_5k_shift', index=False)
 # Automatically detect types from the first row
 x_sample = df.drop(columns='label').iloc[0].to_dict()
 numerical_features = [k for k, v in x_sample.items() if isinstance(v, (int, float))]
