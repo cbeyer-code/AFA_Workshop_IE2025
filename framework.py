@@ -295,7 +295,14 @@ def run_simulation(
             drop_first=False  # set True if you prefer k-1 dummies
         )
         print('Categorical features were One-Hot-Encoded for the classifiers')
+
+    feature_names = data_sample.drop(columns=[target_name]).columns.tolist()
+    categorical_features = [col for col in feature_names if col not in numerical_features]
+    print("Categorical features after one-ho:", categorical_features)
     stream_miss, stream_true = create_missingness(data_sample, target_name, missingness_rate)
+
+
+
 
 
 
@@ -318,12 +325,11 @@ def run_simulation(
 
 
     #Preprocessing leaves categorical features as they are and min-max scales the numercial ones
-   # preprocessing_pipeline = compose.TransformerUnion(
-   #     compose.Select(*numerical_features) | preprocessing.MinMaxScaler(),
-   #     compose.Select(*categorical_features)
-   # )
+    preprocessing_pipeline = compose.TransformerUnion(
+        compose.Select(*numerical_features) | preprocessing.MinMaxScaler(),
+        compose.Select(*categorical_features))
 
-    normalizer = preprocessing.MinMaxScaler()
+
     imputer = preprocessing.StatImputer()
     classifier = classifier_model
 
@@ -351,14 +357,14 @@ def run_simulation(
     for (x_miss, y_miss), (x_true, y_true) in parallel_stream:
         # --- PREDICTION FLOW ---
         # a. Perform Active Feature Acquisition
-        normalizer.learn_one(x_miss) #ToDo: This can lead to values which are out of bounds if x_true exceeds the ranges
-        x_miss_norm = normalizer.transform_one(x_miss.copy())
-        x_true_norm = normalizer.transform_one(x_true.copy())
+        preprocessing_pipeline.learn_one(x_miss) #ToDo: This can lead to values which are out of bounds if x_true exceeds the ranges
+        x_miss_norm = preprocessing_pipeline.transform_one(x_miss.copy())
+        x_true_norm = preprocessing_pipeline.transform_one(x_true.copy())
         x_acquired = afa_transformer.transform_one((x_miss_norm, x_true_norm))
 
         # b. Impute remaining missing values
         x_imputed = imputer.transform_one(x_acquired)
-        print(x_imputed)
+
         # c. Make a prediction
         y_pred = classifier.predict_one(x_imputed)
 
@@ -434,14 +440,14 @@ if __name__ == '__main__':
     # --- CHOOSE YOUR COMPONENTS ---
 
     # 1. Classifier
-    #classifier = tree.HoeffdingTreeClassifier(grace_period=100)
+    classifier = tree.HoeffdingTreeClassifier(grace_period=100)
     #classifier = tree.ExtremelyFastDecisionTreeClassifier(grace_period=100,delta=1e-5, min_samples_reevaluate=100)
     #classifier = linear_model.LogisticRegression(optimizer=optim.SGD(.1))
     classifier = forest.AMFClassifier(n_estimators=10, use_aggregation=True, dirichlet=0.5, seed=1)
 
     # 2. Scorer
-    scorer = RandomScorer(seed=42)
-    #scorer = AEDScorer(window_size=200)
+    #scorer = RandomScorer(seed=42)
+    scorer = AEDScorer(window_size=200)
 
     # 3. Budget Manager
     #budget_mgr = SimpleBudgetManager(budget_per_instance=BUDGET_PER_INSTANCE)
