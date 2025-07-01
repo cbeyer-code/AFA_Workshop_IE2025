@@ -443,7 +443,7 @@ if __name__ == '__main__':
     classifier = tree.HoeffdingTreeClassifier(grace_period=100)
     #classifier = tree.ExtremelyFastDecisionTreeClassifier(grace_period=100,delta=1e-5, min_samples_reevaluate=100)
     #classifier = linear_model.LogisticRegression(optimizer=optim.SGD(.1))
-    classifier = forest.AMFClassifier(n_estimators=10, use_aggregation=True, dirichlet=0.5, seed=1)
+    #classifier = forest.AMFClassifier(n_estimators=10, use_aggregation=True, dirichlet=0.5, seed=1)
 
     # 2. Scorer
     #scorer = RandomScorer(seed=42)
