@@ -431,7 +431,7 @@ if __name__ == '__main__':
             TARGET = 'target'
 
     else:
-        # Use a river dataset
+        # Use a river dataset e.g. https://riverml.xyz/latest/api/datasets/AirlinePassengers/
         DATASET = datasets.Higgs()
         TARGET = 'class'
 
